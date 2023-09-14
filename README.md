@@ -17,6 +17,13 @@ This action deploys a static website via AWS S3.
 **Required** The folder containing the deployable files.
 
 
+## Outputs
+
+### `website-url`
+
+**Required** The URL of the deployed website.
+
+
 ## Example usage
 
 ```yaml
