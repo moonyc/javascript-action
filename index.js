@@ -16,7 +16,7 @@ function run() {
 
     // Output
 
-    const websiteUrl = `http://${bucket}.s3.${bucketRegion}.amazonaws.com/htmlFile`
+    const websiteUrl = `http://${bucket}.s3.${bucketRegion}.amazonaws.com/${htmlFile}`
     core.setOutput('website-url', websiteUrl)
 
 
