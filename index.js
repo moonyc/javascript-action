@@ -11,7 +11,6 @@ try {
     // Upload files
     const s3Uri = `s3://${bucket}`
     exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`)
-    
 } catch (error) {
     core.setFailed(error.message)
 }
