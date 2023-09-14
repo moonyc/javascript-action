@@ -8,6 +8,7 @@ function run() {
     const bucket = core.getInput('bucket', { required: true} )
     const bucketRegion = core.getInput('bucket-region', { required: true} )
     const distFolder = core.getInput('dist-folder', { required: true} )
+    const htmlFile = core.getInput('html-file', { required: true })
 
     // Upload files
     const s3Uri = `s3://${bucket}`
@@ -15,7 +16,7 @@ function run() {
 
     // Output
 
-    const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`
+    const websiteUrl = `http://${bucket}.s3.${bucketRegion}.amazonaws.com/htmlFile`
     core.setOutput('website-url', websiteUrl)
 
 

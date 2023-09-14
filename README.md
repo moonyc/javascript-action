@@ -16,6 +16,10 @@ This action deploys a static website via AWS S3.
 
 **Required** The folder containing the deployable files.
 
+### `html-file`
+
+**Required** The folder name of the html file.
+
 
 ## Outputs
 
@@ -32,5 +36,6 @@ with:
   bucket: aws-s3-bucket-name
   bucket-region: 'us-east-1'
   dist-folder: 'dist'
+  html-file: 'index.html'
 
 ```
