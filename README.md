@@ -1,23 +1,29 @@
-# Hello world javascript action
+# Deploy to AWS S£
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action deploys a static website via AWS S3.
 
 ## Inputs
 
-### `who-to-greet`
+### `bucket`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The S3 bucket name.
 
-## Outputs
+### `bucket-region`
 
-### `time`
+**Required** The region of the S3 bucket. Default `"us-east-1"`.
 
-The time we greeted you.
+### `dist-folder`
+
+**Required** The folder containing the deployable files.
+
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
+uses: moonyc/javascript-action@v2
 with:
-  who-to-greet: 'Mona the Octocat'
+  bucket: aws-s3-bucket-name
+  bucket-region: 'us-east-1'
+  dist-folder: 'dist'
+
 ```

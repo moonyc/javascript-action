@@ -1,13 +1,17 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
+const exec = require('@actions/exec')
 
 try {
-    const nameToGreet = core.getInput('who-to-greet')
-    console.log(`Hello ${nameToGreet}`)
-    const time = (new Date()).toTimeString()
-    core.setOutput("time", time)
-    const payload = JSON.stringify(github.context.payload, undefined, 2)
-    console.log(`The event payload: ${payload}`)
+    // Get the input values
+    const bucket = core.getInput('bucket', { required: true} )
+    const bucketRegion = core.getInput('bucket-region', { required: true} )
+    const distFolder = core.getInput('dist-folder', { required: true} )
+
+    // Upload files
+    const s3Uri = `s3://${bucket}`
+    exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`)
+    
 } catch (error) {
     core.setFailed(error.message)
 }
