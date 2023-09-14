@@ -31,7 +31,7 @@ This action deploys a static website via AWS S3.
 ## Example usage
 
 ```yaml
-uses: moonyc/javascript-action@v2.4
+uses: moonyc/javascript-action@v2.6
 with:
   bucket: aws-s3-bucket-name
   bucket-region: 'us-east-1'
