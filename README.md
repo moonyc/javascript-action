@@ -1,4 +1,4 @@
-# Deploy to AWS S£
+# Deploy to AWS S3
 
 This action deploys a static website via AWS S3.
 
